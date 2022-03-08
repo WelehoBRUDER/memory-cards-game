@@ -1,0 +1,92 @@
+$bg-grey: rgb(66, 66, 66);
+$bg-darkgrey: rgb(50, 50, 50);
+$bg-dark: rgb(35, 35, 35);
+$bg-darker: rgb(15, 15, 15);
+
+@font-face {
+  font-family: "DSFontBold";
+  src: url("/font/EBGaramond-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "DSFont";
+  src: url("/font/EBGaramond-Medium.ttf") format("ttf");
+}
+
+body {
+  background: $bg-grey;
+}
+
+.App {
+  .score {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    background: rgba(10, 10, 10, 0.5);
+    padding: 5px;
+
+    p {
+      font-family: DSFontBold;
+      text-transform: uppercase;
+      color: white;
+      text-shadow: -2px 2px 4px silver;
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .title {
+    font-family: DSFontBold;
+    color: white;
+    text-shadow: -2px 2px 4px silver;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .cardGrid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 150px;
+    transition: 0.17s;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 295px);
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-content: center;
+
+    .memoryCard {
+      transition: 0.17s;
+      width: 295px;
+      height: 370px;
+      background: $bg-dark;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      border: 3px solid $bg-darker;
+      box-shadow: inset 0 0 18px 6px $bg-darkgrey;
+
+      img {
+        margin-top: 15px;
+        width: 270px;
+        height: 280px;
+        border: 3px solid $bg-darker;
+      }
+
+      p {
+        color: white;
+        font-family: DSFont;
+        text-transform: uppercase;
+        font-size: 32px;
+        text-shadow: -2px 2px 4px silver;
+        padding: 0;
+        margin: 10px;
+      }
+    }
+
+    .memoryCard:hover {
+      filter: brightness(1.2);
+      box-shadow: inset 0 0 18px 6px $bg-darkgrey, 0 0 15px 10px goldenrod;
+    }
+  }
+}
